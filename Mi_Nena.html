@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te extrañé mucho Mi Nena Mosha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(45deg, 
+                #ff0844, #ffb199, #ff6b9d, #ff3864, 
+                #ff0844, #ff9a9e, #fecfef, #ff758c);
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .message-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 80px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 20, 100, 0.3);
+            animation: float 3s ease-in-out infinite;
+            transform: scale(0);
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.02); }
+        }
+
+        .message {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(255, 20, 100, 0.6);
+            margin-bottom: 20px;
+            animation: textGlow 2s ease-in-out infinite alternate;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 4px 20px rgba(255, 20, 100, 0.6); }
+            to { text-shadow: 0 4px 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 20, 100, 0.8); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .heart {
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            animation: heartFloat 6s linear infinite;
+            opacity: 0.8;
+            text-shadow: 0 2px 10px rgba(255, 20, 100, 0.6);
+        }
+
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: sparkleAnimation 3s linear infinite;
+        }
+
+        @keyframes sparkleAnimation {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .pulse-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                width: 200px;
+                height: 200px;
+                opacity: 1;
+            }
+            100% {
+                width: 600px;
+                height: 600px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0) rotate(-180deg); }
+            to { transform: scale(1) rotate(0deg); }
+        }
+
+        .message-box {
+            animation: scaleIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards, 
+                       float 3s ease-in-out infinite 2s;
+        }
+
+        .love-button {
+            background: linear-gradient(45deg, #ff6b9d, #ff0844);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 20, 100, 0.4);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .love-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 20, 100, 0.6);
+            background: linear-gradient(45deg, #ff0844, #ff6b9d);
+        }
+
+        @media (max-width: 768px) {
+            .message {
+                font-size: 2.5rem;
+            }
+            .message-box {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring" style="animation-delay: 1s;"></div>
+        <div class="pulse-ring" style="animation-delay: 2s;"></div>
+        
+        <div class="message-box">
+            <div class="message">Te extrañé mucho mi nena</div>
+            <div class="subtitle">💕 Cada momento sin ti se sintió eterno 💕</div>
+            <button class="love-button" onclick="showLove()">Reclame su beso 💋</button>
+        </div>
+    </div>
+
+    <script>
+        // Crear corazones flotantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Crear estrellas brillantes
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Función para cuando se hace clic en el botón
+        function showLove() {
+            // Crear múltiples corazones al hacer clic
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    createHeart();
+                }, i * 100);
+            }
+
+            // Crear efecto de explosión de estrellas
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createSparkle();
+                }, i * 50);
+            }
+
+            // Cambiar el mensaje temporalmente
+            const button = document.querySelector('.love-button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '💋 ¡Beso reclamado! 💋';
+            button.style.background = 'linear-gradient(45deg, #ff9a9e, #fecfef)';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = 'linear-gradient(45deg, #ff6b9d, #ff0844)';
+            }, 2000);
+        }
+
+        // Crear corazones continuamente
+        setInterval(createHeart, 800);
+        
+        // Crear estrellas continuamente
+        setInterval(createSparkle, 1500);
+
+        // Efecto de partículas en el cursor
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() < 0.1) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.position = 'fixed';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '9999';
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+        });
+
+        // Animación inicial con sonido simulado
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.body.style.animation = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
