@@ -2,6 +2,9 @@
 
 Una hermosa página web de amor con animaciones y efectos especiales dedicada a "Mi Nena Mosha".
 
+## 🌐 Ver la página en vivo
+Visita: **https://danni-code-prog.github.io/MiNena/**
+
 ## Características
 
 - 🌈 Gradientes animados de fondo
@@ -17,9 +20,9 @@ Una hermosa página web de amor con animaciones y efectos especiales dedicada a 
 - CSS3 (Animaciones y gradientes)
 - JavaScript (Efectos interactivos)
 
-## Vista previa
+## Vista previa local
 
-Abre `Mi_Nena.html` en cualquier navegador web moderno para ver la página en acción.
+Abre `index.html` en cualquier navegador web moderno para ver la página en acción.
 
 ## Mensaje especial
 
